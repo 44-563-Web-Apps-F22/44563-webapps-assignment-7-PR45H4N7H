@@ -13,9 +13,9 @@
 <body>
 <h1>Prashanth Reddy Dandyala reaction timer</h1>
   <!-- <h2>Timeout - Red in 3 seconds</h2> -->
-<p id="target">Your time</p>
-<p id=" countdown">count</p>
-  <button type="button" class="btn btn-primary" onclick="StartTime()">Start Time</button>
+<p class="text-warning" id="target">Your time</p>
+<p class="text-success" id="countdown">count</p>
+  <button type="button" class="btn btn-primary" onclick="startTime()">Start Time</button>
   <button type="button"class="btn btn-primary" onclick="recordReact()">React Now</button>
   <!-- <p id="target">I will become red </p> -->
   
@@ -25,6 +25,24 @@
   {
     myTime = Date.now()
     console.log(myTime)
+  }
+  function startTime()
+  {
+    for(let i=0;i<4;i++)
+    {
+     setTimeout(()=>{document.getElementById("countdown").innerHTML=i},(1000*(3-i)))
+    }setTimeout(()=>{if(myTime==undefined)
+    {
+      document.getElementById("target").innerHTML="Too slow"
+    }
+    else
+            {
+              var buttonTime = Date.now()
+              var difference = buttonTime - myTime
+              document.getElementById("target").innerHTML ="Time was " + difference
+            }
+      },3000)
+    
   }
   // function buttonPress1() {
   //   setTimeout(function(){
