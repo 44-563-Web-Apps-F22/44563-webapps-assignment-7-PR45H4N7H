@@ -119,12 +119,14 @@
     
 		
 		var Items =document.getElementsByClassName('cycler')
-	  let rand1 =Math.floor(Math.random()*(Items.length))
-	  let rand2= Math.floor(Math.random()*(Items.length))
-	   let swap1=Items[rand1]
-	   let swap2 = Items[rand2]	   
-		target.insertBefore(swap1,Items[rand2])
-		target.insertBefore(swap2,Items[rand1])
+	  let Ele1 =Math.floor(Math.random()*(Items.length))
+	  let Ele2= Math.floor(Math.random()*(Items.length))
+	   let swap1=Items[Ele1]
+
+	   let swap2 = Items[Ele2]	   
+		
+	   target.insertBefore(swap1,Items[Ele2])
+		target.insertBefore(swap2,Items[Ele1])
 }
 </script>
 </html>	
