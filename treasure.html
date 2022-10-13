@@ -27,6 +27,7 @@
         </p>
         
         <p class="text-success" id="help">Help report</p>
+        <button type="button" class="btn btn-primary" onclick="reset()">Reset</button>
 
         <div class="container">
             <div class="row">
@@ -155,6 +156,30 @@
             var score=0
             var lastCheck=12
             var treasureLocation=18
+            function reset()
+        {
+            treasureLocation = Math.floor(Math.random()*25)
+
+            while(treasureLocation == 12)
+
+            {
+
+                    treasureLocation = Math.floor(Math.random()*25)
+
+            }
+            chestCount = 0
+
+                 score = 0
+
+              document.getElementById("chests").innerHTML= "Number of chests checked is zero"
+
+              document.getElementById("score").innerHTML= "Score is unknown"
+
+                  for(let x=0;x<25;x++)
+                if(x != 12)
+                
+                    document.getElementById(ids[x]).src = "ctChest.png"
+        }
             function check(position)
             {
                 if(position==treasureLocation)
@@ -189,7 +214,7 @@
                 console.log(lastRow)
                 console.log(treasureCol)
                 console.log(treasureRow)
-                if(lastRow==treasureRow&&lastCheck!=treasureLocation)
+    if(lastRow==treasureRow&&lastCheck!=treasureLocation)
     {
       if(lastCheck<treasureLocation)
       {
@@ -220,6 +245,7 @@
     document.getElementById("score").innerText="Score is "+score+"."
     document.getElementById("help").innerText=result
   }
+  
         </script>
 
 </body>
